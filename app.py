@@ -3,7 +3,8 @@ import requests
 from datetime import datetime
 
 SLACK_WEBHOOK_URL = os.environ["SLACK_WEBHOOK_URL"]
-PLANNER_FORM_URL = os.environ["PLANNER_FORM_URL"]
+
+PLANNER_FORM_URL = "https://github.com/rishitat-tech/daily-planner-bot/issues/new?template=daily_planner.yml"
 
 
 def build_message():
@@ -13,18 +14,16 @@ def build_message():
 
 *Daily Planner — {today}*
 
-Please fill out today's daily planner form:
+Please fill out today's planner form:
 
 {PLANNER_FORM_URL}
 
-Use the form to share:
+The form is for:
 - Main focus
 - Tasks
 - Meetings
 - Blockers
 - End-of-day update
-
-Please submit your update early so the team can stay aligned.
 """
 
     return {"text": text}
