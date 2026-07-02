@@ -20,7 +20,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Post daily planner to Slack
+      - name: Post daily planner reminder to Slack
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          PLANNER_FORM_URL: ${{ secrets.PLANNER_FORM_URL }}
         run: python app.py
