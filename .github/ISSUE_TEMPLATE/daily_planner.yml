@@ -1,0 +1,57 @@
+name: Daily Planner Form
+description: Fill out the daily planner for today
+title: "Daily Planner - "
+labels: ["daily-planner"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill this out each morning so the team can stay aligned.
+
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      placeholder: Your name
+    validations:
+      required: true
+
+  - type: textarea
+    id: main_focus
+    attributes:
+      label: Main focus for today
+      placeholder: What is your main focus today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: Tasks for today
+      placeholder: List your tasks for today
+    validations:
+      required: true
+
+  - type: textarea
+    id: meetings
+    attributes:
+      label: Meetings today
+      placeholder: List any meetings for today
+    validations:
+      required: false
+
+  - type: textarea
+    id: blockers
+    attributes:
+      label: Blockers or help needed
+      placeholder: Add blockers or help needed
+    validations:
+      required: false
+
+  - type: textarea
+    id: end_of_day_update
+    attributes:
+      label: End-of-day update
+      placeholder: Add progress update later if needed
+    validations:
+      required: false
