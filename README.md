@@ -1,21 +1,35 @@
 # Slack Daily Planner Bot
 
-Posts a daily planner message to Slack every weekday morning.
+A simple Slack bot that posts a daily planner message every weekday morning.
 
-## Setup
+## What it does
 
-1. Create a Slack Incoming Webhook.
-2. Add the webhook URL as a GitHub secret named:
-
-SLACK_WEBHOOK_URL
-
-3. Push this repo to GitHub.
-4. Run the workflow manually from the GitHub Actions tab to test.
+The bot posts a morning planner in Slack with:
+- Main focus
+- Tasks
+- Meetings
+- Reminders
+- Blockers
+- End-of-day updates
 
 ## Schedule
 
-The bot runs on this cron schedule:
+Runs Monday to Friday at 8 AM Pacific during PDT.
 
-0 14 * * 1-5
+Cron:
+0 15 * * 1-5
 
-GitHub Actions cron uses UTC.
+## How to use
+
+When the planner message appears in Slack, team members can reply with:
+- What they are working on
+- Any blockers
+- Meeting notes or reminders
+- End-of-day progress updates
+
+## Setup needed
+
+The GitHub repo needs this secret:
+SLACK_WEBHOOK_URL
+
+This stores the Slack webhook URL securely.
