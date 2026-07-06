@@ -3,8 +3,7 @@ import requests
 from datetime import datetime
 
 SLACK_WEBHOOK_URL = os.environ["SLACK_WEBHOOK_URL"]
-
-PLANNER_FORM_URL = "https://github.com/rishitat-tech/daily-planner-bot/issues/new?template=daily_planner.yml"
+PLANNER_FORM_URL = os.environ["PLANNER_FORM_URL"]
 
 
 def build_message():
