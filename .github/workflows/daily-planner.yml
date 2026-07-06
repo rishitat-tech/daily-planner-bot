@@ -1,4 +1,4 @@
-name: Slack Daily Planner Bot
+- cron: "30 14 * * 1-5"name: Slack Daily Planner Bot
 
 on:
   schedule:
