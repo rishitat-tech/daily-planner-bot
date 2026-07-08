@@ -3,11 +3,10 @@ name: Slack Daily Planner Bot
 on:
   schedule:
     - cron: "30 14 * * 1-5"
-    - cron: "0 15 * * 1-5"
   workflow_dispatch:
 
 jobs:
-  daily-planner:
+  post-daily-planner:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,16 +22,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Post daily planner reminder to Slack
-        if: github.event.schedule == '30 14 * * 1-5'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           PLANNER_FORM_URL: ${{ secrets.PLANNER_FORM_URL }}
         run: python app.py
-
-      - name: Post daily planner summary to Slack
-        if: github.event.schedule == '0 15 * * 1-5' || github.event_name == 'workflow_dispatch'
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
-          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-        run: python summary.py
