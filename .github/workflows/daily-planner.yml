@@ -1,9 +1,6 @@
 name: Slack Daily Planner Bot
 
 on:
-  schedule:
-    - cron: "30 11 * * 1-5"
-
   workflow_dispatch:
 
 jobs:
